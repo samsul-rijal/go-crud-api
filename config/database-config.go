@@ -9,8 +9,8 @@ import (
 	"gorm.io/gorm"
 )
 
-// setupDatabaseConnection
-func setupDatabaseConnection() *gorm.DB  {
+// SetupDatabaseConnection
+func SetupDatabaseConnection() *gorm.DB  {
 	
 	errEnv := godotenv.Load()
 	if errEnv != nil {
@@ -33,7 +33,7 @@ func setupDatabaseConnection() *gorm.DB  {
 
 }
 
-func CloseDatabaseCOnnection(db *gorm.DB)  {
+func CloseDatabaseConnection(db *gorm.DB)  {
 	dbSQL, err := db.DB()
 	if err != nil {
 		panic("Failed to close connection from database")
